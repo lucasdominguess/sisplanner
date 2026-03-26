@@ -1,0 +1,89 @@
+/* Custom styles for dashboard charts to keep separated from JS/Blade where possible */
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 160px;
+    gap: 12px;
+}
+
+.bar-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 100%;
+}
+
+.bar {
+    width: 20px;
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease;
+}
+
+.bar-receita {
+    background-color: #006565;
+}
+
+.bar-despesa {
+    background-color: #3b5998;
+}
+
+.bar-label {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #6f7979;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+/* Square chart styles */
+.square-chart-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.square-layer {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+}
+
+.square-bg {
+    background-color: #006565;
+    z-index: 1;
+}
+
+.square-fg {
+    background-color: white;
+    inset: 12px;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.square-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    z-index: 2;
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+    background-color: #3b5998;
+}
+
+.square-overlay-3 {
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    z-index: 3;
+    clip-path: polygon(0 50%, 30% 50%, 30% 100%, 0 100%);
+    background-color: #a0522d;
+}
+

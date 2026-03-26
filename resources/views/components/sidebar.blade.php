@@ -6,29 +6,39 @@
     </div>
     
     <nav class="flex-1 space-y-1">
-        <a class="flex items-center gap-3 px-4 py-3 text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] transition-all hover:translate-x-1 duration-300 rounded-xl" href="#">
-            <span class="material-symbols-outlined">dashboard</span>
-            <span>Dashboard</span>
+        <!-- Dashboard -->
+        <a class="flex items-center gap-3 px-4 py-3 transition-all duration-300 rounded-xl {{ request()->routeIs('dashboard') ? 'text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] translate-x-1 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50' : 'text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] hover:translate-x-1' }}" href="{{ route('dashboard') }}">
+            <span class="material-symbols-outlined" {!! request()->routeIs('dashboard') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>dashboard</span>
+            <span>Painel</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] transition-all hover:translate-x-1 duration-300 rounded-xl" href="#">
-            <span class="material-symbols-outlined">receipt_long</span>
+        
+        <!-- Transações -->
+        <a class="flex items-center gap-3 px-4 py-3 transition-all duration-300 rounded-xl {{ request()->routeIs('transactions') ? 'text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] translate-x-1 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50' : 'text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] hover:translate-x-1' }}" href="{{ route('transactions') }}">
+            <span class="material-symbols-outlined" {!! request()->routeIs('transactions') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>receipt_long</span>
             <span>Transações</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] transition-all hover:translate-x-1 duration-300 rounded-xl" href="#">
-            <span class="material-symbols-outlined">account_balance_wallet</span>
-            <span>Contas</span>
+        
+        <!-- Contas & Cartões -->
+        <a class="flex items-center gap-3 px-4 py-3 transition-all duration-300 rounded-xl {{ request()->routeIs('accounts') ? 'text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] translate-x-1 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50' : 'text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] hover:translate-x-1' }}" href="{{ route('accounts') }}">
+            <span class="material-symbols-outlined" {!! request()->routeIs('accounts') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>account_balance_wallet</span>
+            <span>Contas & Cartões</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] transition-all hover:translate-x-1 duration-300 rounded-xl" href="#">
-            <span class="material-symbols-outlined">pie_chart</span>
+        
+        <!-- Orçamentos -->
+        <a class="flex items-center gap-3 px-4 py-3 transition-all duration-300 rounded-xl {{ request()->routeIs('budgets') ? 'text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] translate-x-1 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50' : 'text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] hover:translate-x-1' }}" href="{{ route('budgets') }}">
+            <span class="material-symbols-outlined" {!! request()->routeIs('budgets') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>pie_chart</span>
             <span>Orçamentos</span>
         </a>
-        <!-- Active State: Categorias -->
-        <a class="flex items-center gap-3 px-4 py-3 text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] transition-all translate-x-1 duration-300 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50" href="#">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">category</span>
+        
+        <!-- Categorias -->
+        <a class="flex items-center gap-3 px-4 py-3 transition-all duration-300 rounded-xl {{ request()->routeIs('categories') ? 'text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] translate-x-1 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50' : 'text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] hover:translate-x-1' }}" href="{{ route('categories') }}">
+            <span class="material-symbols-outlined" {!! request()->routeIs('categories') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>category</span>
             <span>Categorias</span>
         </a>
-        <a class="flex items-center gap-3 px-4 py-3 text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] transition-all hover:translate-x-1 duration-300 rounded-xl" href="#">
-            <span class="material-symbols-outlined">settings</span>
+        
+        <!-- Configurações -->
+        <a class="flex items-center gap-3 px-4 py-3 transition-all duration-300 rounded-xl {{ request()->routeIs('settings') ? 'text-[#006565] dark:text-[#ffffff] font-bold border-r-4 border-[#006565] translate-x-1 rounded-r-none rounded-l-xl bg-[#f0f4f3]/50' : 'text-[#404949] dark:text-[#bfc8c8] hover:bg-[#f0f4f3] dark:hover:bg-[#2a3131] hover:translate-x-1' }}" href="{{ route('settings') }}">
+            <span class="material-symbols-outlined" {!! request()->routeIs('settings') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>settings</span>
             <span>Configurações</span>
         </a>
     </nav>

@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
+
+Route::get('/login', fn() => view('auth.login'))->name('login');
+Route::get('/dashboard', fn() => view('pages.dashboard.index'))->name('dashboard');
 
 Route::get('/categories', fn() => view('pages.categories.index'))->name('categories');
 Route::get('/transactions', fn() => view('pages.transactions.index'))->name('transactions');
